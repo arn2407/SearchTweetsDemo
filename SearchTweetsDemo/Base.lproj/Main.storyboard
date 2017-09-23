@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q80-9v-jvB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SearchTweetsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="why-7I-poa">
+                                <rect key="frame" x="50" y="-64" width="275" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="why-7I-poa" secondAttribute="height" multiplier="6:1" id="hff-4k-TkN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Search Tweets">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionSearchTweets:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vmZ-N0-9fH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="why-7I-poa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-84" id="22N-pN-yug"/>
+                            <constraint firstItem="why-7I-poa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="69i-QY-hIZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="why-7I-poa" secondAttribute="trailing" constant="50" id="MKM-MS-Rrf"/>
+                            <constraint firstItem="why-7I-poa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="adA-eT-tcy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="R7d-76-Sh7"/>
+                    <connections>
+                        <outlet property="buttonSearch" destination="why-7I-poa" id="h0C-6Q-nzl"/>
+                        <outlet property="constraintButtonLeading" destination="69i-QY-hIZ" id="eTx-KT-exG"/>
+                        <outlet property="constraintButtonTopSpace" destination="22N-pN-yug" id="z61-eg-LcS"/>
+                        <outlet property="constraintButtonTrailing" destination="MKM-MS-Rrf" id="b3X-1l-GY9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="33.733133433283363"/>
+        </scene>
+        <!--Tweet Search View Controller-->
+        <scene sceneID="CLa-yd-VPc">
+            <objects>
+                <viewController storyboardIdentifier="TweetSearchViewController" id="UaI-5K-bZS" customClass="TweetSearchViewController" customModule="SearchTweetsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BKn-vB-oJB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYD-x4-pmk">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zb-pk-Yzc">
+                                        <rect key="frame" x="8" y="13" width="34" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="34" id="VlQ-lq-e2Q"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="actionBack:" destination="UaI-5K-bZS" eventType="touchUpInside" id="iFa-lK-OvH"/>
+                                        </connections>
+                                    </button>
+                                    <searchBar clipsSubviews="YES" contentMode="redraw" placeholder="Search Hashtags" translatesAutoresizingMaskIntoConstraints="NO" id="9Bg-k8-dt6">
+                                        <rect key="frame" x="50" y="0.0" width="313" height="44"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="webSearch" returnKeyType="search"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="UaI-5K-bZS" id="wYO-bV-Fy5"/>
+                                        </connections>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="3zb-pk-Yzc" firstAttribute="centerY" secondItem="oYD-x4-pmk" secondAttribute="centerY" id="4fk-hp-a4I"/>
+                                    <constraint firstAttribute="height" constant="44" id="4zg-Sh-G0z"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Bg-k8-dt6" secondAttribute="trailing" constant="12" id="Hdg-oA-2Lb"/>
+                                    <constraint firstItem="9Bg-k8-dt6" firstAttribute="leading" secondItem="3zb-pk-Yzc" secondAttribute="trailing" constant="8" id="Jqh-FJ-nFv"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Bg-k8-dt6" secondAttribute="bottom" id="KSr-Pe-xHL"/>
+                                    <constraint firstItem="9Bg-k8-dt6" firstAttribute="top" secondItem="oYD-x4-pmk" secondAttribute="top" id="m7g-Tt-zmp"/>
+                                    <constraint firstItem="3zb-pk-Yzc" firstAttribute="leading" secondItem="oYD-x4-pmk" secondAttribute="leading" constant="8" id="xTQ-G3-XJ2"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PYo-is-Nev">
+                                <rect key="frame" x="8" y="80" width="359" height="579"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="0CL-H1-9HI">
+                                    <size key="itemSize" width="97" height="96"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TweetsSearchCell" id="QUB-cQ-IDH" customClass="TweetsSearchCell" customModule="SearchTweetsDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="97" height="96"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="96"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="pac-nv-Vf1" customClass="LazyLoadingImageView" customModule="SearchTweetsDemo" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="97" height="96"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZhR-xg-Qwb">
+                                                    <rect key="frame" x="0.0" y="76" width="97" height="20"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.62676583904109584" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbL-5N-pRX">
+                                                    <rect key="frame" x="8" y="76" width="81" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="SRY-Ef-EwA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.92298173900000002" green="0.3855575919" blue="0.57239818570000001" alpha="0.68814212328767121" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="HbL-5N-pRX" secondAttribute="trailing" constant="8" id="38L-bR-hBb"/>
+                                            <constraint firstItem="pac-nv-Vf1" firstAttribute="leading" secondItem="QUB-cQ-IDH" secondAttribute="leading" id="3mh-pG-fMv"/>
+                                            <constraint firstItem="ZhR-xg-Qwb" firstAttribute="leading" secondItem="QUB-cQ-IDH" secondAttribute="leading" id="5eE-EK-8dd"/>
+                                            <constraint firstAttribute="trailing" secondItem="pac-nv-Vf1" secondAttribute="trailing" id="JLG-J8-4b9"/>
+                                            <constraint firstItem="HbL-5N-pRX" firstAttribute="leading" secondItem="QUB-cQ-IDH" secondAttribute="leading" constant="8" id="JMx-Hj-R3P"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZhR-xg-Qwb" secondAttribute="bottom" id="b9N-kS-ngv"/>
+                                            <constraint firstAttribute="bottom" secondItem="pac-nv-Vf1" secondAttribute="bottom" id="cA0-X5-Ofr"/>
+                                            <constraint firstItem="pac-nv-Vf1" firstAttribute="top" secondItem="QUB-cQ-IDH" secondAttribute="top" id="mVT-v3-sRD"/>
+                                            <constraint firstAttribute="bottom" secondItem="HbL-5N-pRX" secondAttribute="bottom" id="s00-ZG-kef"/>
+                                            <constraint firstItem="ZhR-xg-Qwb" firstAttribute="height" secondItem="HbL-5N-pRX" secondAttribute="height" id="wWH-Uc-9xJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZhR-xg-Qwb" secondAttribute="trailing" id="xcJ-4P-Lcc"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="pac-nv-Vf1" id="Qbu-kF-rg8"/>
+                                            <outlet property="labelTweet" destination="HbL-5N-pRX" id="Pxf-Zw-Bwb"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="UaI-5K-bZS" id="Jnl-tr-mql"/>
+                                    <outlet property="delegate" destination="UaI-5K-bZS" id="Upd-Dz-MvV"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PYo-is-Nev" firstAttribute="top" secondItem="oYD-x4-pmk" secondAttribute="bottom" constant="8" id="8H8-kb-5W0"/>
+                            <constraint firstItem="oYD-x4-pmk" firstAttribute="leading" secondItem="hq1-pP-Ej5" secondAttribute="leading" id="9V5-XG-ONN"/>
+                            <constraint firstItem="hq1-pP-Ej5" firstAttribute="trailing" secondItem="oYD-x4-pmk" secondAttribute="trailing" id="VhO-PR-Zrh"/>
+                            <constraint firstItem="PYo-is-Nev" firstAttribute="bottom" secondItem="hq1-pP-Ej5" secondAttribute="bottom" constant="-8" id="Wtg-g6-O3Y"/>
+                            <constraint firstItem="PYo-is-Nev" firstAttribute="trailing" secondItem="hq1-pP-Ej5" secondAttribute="trailing" constant="-8" id="dAv-7H-3wV"/>
+                            <constraint firstItem="oYD-x4-pmk" firstAttribute="top" secondItem="hq1-pP-Ej5" secondAttribute="top" constant="8" id="mYa-86-AbH"/>
+                            <constraint firstItem="PYo-is-Nev" firstAttribute="leading" secondItem="hq1-pP-Ej5" secondAttribute="leading" constant="8" id="oWV-Cx-aEj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hq1-pP-Ej5"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionTweets" destination="PYo-is-Nev" id="UT8-eA-MKE"/>
+                        <outlet property="mSearchBar" destination="9Bg-k8-dt6" id="WdZ-sl-fTD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L7i-4F-vv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1197.5999999999999" y="113.79310344827587"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9dS-A4-afx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Q80-9v-jvB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dne-TJ-sI6">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wle-tz-JcE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wE3-cC-rsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-919" y="50"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="9" height="16"/>
+        <image name="placeholder" width="950" height="600"/>
+    </resources>
+</document>
