@@ -57,23 +57,16 @@ extension TweetSearchViewController : UISearchBarDelegate
   
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if (searchBar.text ?? "").isEmpty || searchBar.text!.characters.count < 3 {return}
-       searchHashtag(text: searchBar.text!)
+       searchHashtag(text: getHashTagString(forString: searchBar.text!))
         searchBar.resignFirstResponder()
         
     }
-    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-       var finalString = ((searchBar.text ?? "") as NSString).replacingCharacters(in: range, with: text)
-        if !finalString.localizedStandardContains("#")
-        {
-            finalString = "#" + finalString
-            searchBar.text = finalString
-            return false
+    private func getHashTagString(forString string : String) -> String
+    {
+    let stringComponents = string.components(separatedBy: " ")
+        let hashTagString = stringComponents.map { !$0.hasPrefix("#") ? "#" + $0 : $0
         }
-        if text.localizedStandardContains("#") || text.localizedStandardContains(" ")
-        {
-           return false
-        }
-        return true
+        return hashTagString.joined(separator: " ")
     }
     private func searchHashtag(text : String)
     {
